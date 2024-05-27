@@ -1,3 +1,7 @@
-media
+.vscode
+.venv
+__pycache__
+data
 db.sqlite3
-
+migrations
+media
