@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load static %}
+{% block meta %}
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="URL{% static 'img/about.webp' %}" />
+  <meta property="og:title" content="TITLE">
+  <meta property="og:description" content="Schreiben, lektorieren, redigieren, Auftragsschreiber, Deutsch, Englisch und
+                                           Russisch">
+  <meta property="og:image" content="URL{% static 'img/about.webp' %}">
+  <meta property="og:url" content="URL">
+{% endblock meta %}
+{% block title %}
+  Leistungen – TITLE
+{% endblock title %}
+{% block main %}
+  <div class="container-lg mb-5">
+    {% include "components/navbar.html" %}
+    <div class="row gap-5 justify-content-center">
+      <main class="col-md-8 col-sm-12 col-xs-12 ">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="mt-5">
+              <h4>
+                YOUR SERVICE 1
+              </h4>
+              <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. </p>
+              <h4>
+                YOUR SERVICE 1
+              </h4>
+              <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. </p>
+              <h4>
+                YOUR SERVICE 1
+              </h4>
+              <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. </p>
+            </div>
+            <div class="mt-2">
+              <button type="button" class="btn btn-primary">
+                <a href="mailto:YOUR_EMAIL" class="text-decoration-none link-light">E-Mail senden</a></button>
+            </div>
+          </div>
+        </div>
+      </main>
+      <aside class="col-3 d-md-block d-none">
+        {% include "sidebar_list.html" %}
+      </aside>
+    </div>
+  </div>
+{% endblock main %}

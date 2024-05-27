@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load static %}
+{% block meta %}
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="URL{% static 'img/about.webp' %}" />
+  <meta property="og:title" content="TITLE">
+  <meta property="og:description" content="Themen">
+  <meta property="og:image" content="URL{% static 'img/about.webp' %}">
+  <meta property="og:url" content="URL">
+{% endblock meta %}
+{% block title %}
+{% endblock title %}
+{% block main %}
+  <div class="container-lg mb-5 bg-light">
+    {% include "components/navbar.html" %}
+    <div class="row gap-lg-5 gap-md-2 justify-content-end">
+      <main class="col-md-8 col-sm-12 col-xs-12">
+        <div class="container-fluid">
+          {% include "components/button-back.html" %}
+          {% for post in posts %}
+            <div class="card border-0 col-12 mt-2 bg-light">
+              <a href="{{ post.get_absolute_url }}" class="text-decoration-none link-dark ">
+                <div class="card-body bg-light">
+                  <div class="text-muted small mb-2">
+                    {{ post.created_at|date:"d.m.Y" }}&nbsp;&nbsp;<span>#{{ post.tag.slug }}</span>
+                  </div>
+                  <h1 class="fs-5 fw-bold">{{ post.title }}</h1>
+                  <h2 class="fs-6">{{ post.subtitle }}</h2>
+                </div>
+              </a>
+            </div>
+          {% endfor %}
+        </div>
+      </main>
+      <aside class="col-3 d-md-block d-none">
+        {% include "sidebar_list.html" %}
+      </aside>
+    </div>
+  </div>
+{% endblock main %}

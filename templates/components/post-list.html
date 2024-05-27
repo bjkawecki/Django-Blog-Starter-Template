@@ -1,0 +1,26 @@
+{% for post in object_list %}
+  {% if forloop.last %}
+    <div class="card border-0 col-12 mt-1 bg-light"
+         hx-get="{% url 'homepage' %}?page={{ page_obj.number|add:1 }}"
+         hx-trigger="revealed"
+         hx-swap="afterend">
+  {% else %}
+    <div class="card border-0 col-12 mt-1 bg-light">
+  {% endif %}
+  <div class="card-body bg-light p-0">
+    <div>
+      <a href="{{ post.get_absolute_url }}"
+         class="text-decoration-none my-link-color link-dark ">
+        <h1 class="fw-bold fs-6 pt-3">{{ post.title }}</h1>
+      </a>
+      <h2 class="fs-6">{{ post.subtitle }}</h2>
+    </div>
+    <div class="text-muted small mb-2">
+      <span class="align-middle">
+      {{ post.created_at|date:"d.m.Y" }}&nbsp;&nbsp;</span>
+      <span class="align-middle"><a href="{% url 'TagListView' post.tag.slug %}"
+                                                       class="text-decoration-none text-muted hvr-underline-reveal">{{ post.tag.name|title }}</a></span>
+    </div>
+  </div>
+  </div>
+{% endfor %}

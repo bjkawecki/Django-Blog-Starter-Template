@@ -1,0 +1,21 @@
+{% load static %}
+<div class="text-muted mt-4 px-2">
+  <hr class="dropdown-divider" />
+  <a href="/"
+     class="text-decoration-none {% if request.path == '/' %}fw-bold text-secondary {% else %}footer-color{% endif %}">Startseite</a>
+  <span>&nbsp;&middot;&nbsp;</span>
+  <a href="/about"
+     class="text-decoration-none {% if request.path == '/about/' %}fw-bold text-secondary {% else %}footer-color{% endif %}">Über</a>
+  <span>&nbsp;&middot;&nbsp;</span>
+ <a href="https://t.me/YOUR_TELEGRAM_NAME"
+        class="text-decoration-none {% if request.path == '/telegram' %}fw-bold text-secondary {% else %}footer-color{% endif %}">Telegram</a>
+    <span>&nbsp;&middot;&nbsp;</span>
+  <a href="mailto:YOUR_EMAIL"
+     class="text-decoration-none {% if request.path == '/contact/' %}fw-bold text-secondary {% else %}footer-color{% endif %}">Kontakt</a>
+  <span>&nbsp;&middot;&nbsp;</span>
+  <a href="/services"
+    class="text-decoration-none {% if request.path == '/services/' %}fw-bold text-secondary {% else %}footer-color{% endif %}">Leistungen</a>
+  <span>&nbsp;&middot;&nbsp;</span>
+  <a href="/impressum"
+     class="text-decoration-none {% if request.path == '/impressum/' %}fw-bold text-secondary {% else %}footer-color{% endif %}">Impressum</a>
+</div>

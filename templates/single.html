@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% load static %}
+{% block meta %}
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@YOUR_TWITTER" />
+  <meta name="twitter:description" content="{% if post.teaser %}{{ post.teaser|truncatechars:160 }}{% else %}
+                                              {{ post.text|safe|truncatechars:160 }}{% endif %}" />
+  <meta name="twitter:image"
+        content="{% if post.image %}URL{{ post.image.url }} {% else %}URL{% static 'img/about.webp' %}{% endif %}" />
+  <meta property="og:title" content="{{ post.title }}">
+  <meta property="og:url" content="URL{{ post.get_absolute_url }}">
+  <meta property="og:description" content="{% if post.teaser %}{{ post.teaser|truncatechars:160 }}{% else %}
+                                             {{ post.text|safe|truncatechars:160 }}{% endif %}">
+  <meta property="og:image" content="{% if post.image %}URL{{ post.image.url }}
+                                     {% else %}URL{% static 'img/about.webp' %}{% endif %}">
+  <meta name="keywords" content="blogpost" />
+{% endblock meta %}
+{% block title %}
+  {{ post.title }}
+{% endblock title %}
+{% block main %}
+  <div class="container-lg mb-5 bg-light">
+    {% include "components/navbar.html" %}
+    <div class="row gap-lg-5 gap-md-2 justify-content-center">
+      <main class="col-md-8 col-sm-12 col-xs-12">
+        <div class="container-fluid">
+          <article class="card my-5 border-0 bg-light">
+            {% if post.image %}
+              <img src="{{ post.image.url }}" class="card-img-top" alt="" height="" width="" />
+            {% endif %}
+            <div class="card-body p-0">
+              <header>
+                <h2 class="fs-4 pt-3">{{ post.subtitle }}</h2>
+                <h1 class="fs-1 fw-bold my-link-color ">{{ post.title }}</h1>
+              <!-- <h2 class="fs-5 py-3">{{ post.subtitle }}</h2> -->
+                <div class="text-muted mb-3">
+                  {{ post.created_at|date:"d.m.Y" }}&nbsp;&nbsp;<span>
+                    <a href="{% url 'TagListView' post.tag.slug %}" class="text-decoration-none text-muted hvr-underline-reveal">
+                      {{ post.tag.name|title }}</span>
+                  </a>
+                </div>
+              </header>
+              <div class="p-0 fs18px" id="article-content">{{ post.text|markdown|safe }}</div>
+            </div>
+          </article>
+        </div>
+        {% include "components/button-up.html" %}
+      </main>
+      <aside class="col-3 d-md-block d-none">
+        {% include "sidebar_single.html" %}
+      </aside>
+    </div>
+  </div>
+{% endblock main %}

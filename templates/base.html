@@ -1,0 +1,38 @@
+{% load static %}
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{% bootstrap_messages %}
+<html lang="de" prefix="og: http://ogp.me/ns#">
+
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="keywords" content="Blog" />
+        <meta name="author" content="TITLE" />
+        <meta name="description" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        {% block meta %}
+        {% endblock meta %}
+        <title>
+            {% block title %}
+                Base
+            {% endblock title %}
+        </title>
+        <link rel="apple-touch-icon" sizes="180x180" href="{% static 'fav/apple-touch-icon.png' %}">
+        <link rel="icon" type="image/png" sizes="32x32" href="{% static 'fav/favicon-32x32.png' %}">
+        <link rel="icon" type="image/png" sizes="16x16" href="{% static 'fav/favicon-16x16.png' %}">
+        <link rel="manifest" href="{% static 'fav/site.webmanifest' %}">
+        <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+
+        <script src="https://unpkg.com/htmx.org@1.8.5"
+                integrity="sha384-7aHh9lqPYGYZ7sTHvzP1t3BAfLhYSTy9ArHdP3Xsr9/3TlGurYgcPBoFmXX2TX/w"
+                crossorigin="anonymous"></script>
+    </head>
+
+    <body class="bg-light">
+        {% block main %}
+        {% endblock main %}
+    </body>
+
+</html>

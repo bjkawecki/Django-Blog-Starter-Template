@@ -1,0 +1,15 @@
+{% if related %}
+  <div class="mt-4">
+    <div class="px-2 fw-bold font-monospace">ÄHNLICHE BEITRÄGE</div>
+    <div class="py-1 px-2">
+      {% for post in related %}
+        <a href="{{ post.get_absolute_url }}" class="text-decoration-none my-link-color link-dark">
+          <div class="card mb-2 bg-light border-0">
+            <div class="text-muted small">{{ post.created_at|date:"d.m.Y" }}</div>
+            <h1 class="fs-6 fw-bold pb-1">{{ post.title }}</h1>
+          </div>
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+{% endif %}

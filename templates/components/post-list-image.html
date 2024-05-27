@@ -1,0 +1,35 @@
+{% for post in posts_image %}
+  <div class="card border-0 col-md mb-3 bg-light">
+    {% if post.image %}
+      <a href="{{ post.get_absolute_url }}"
+         class="text-decoration-none link-dark">
+        <img src="{{ post.image.url }}"
+             class="card-img-top"
+             alt=""
+             height=""
+             width="" />
+      </a>
+    {% endif %}
+    <div class="card-body p-0">
+      <div class="pt-3">
+        <a href="{{ post.get_absolute_url }}"
+           class="text-decoration-none my-link-color link-dark">
+          <h1 class="fs-4 fw-bold">{{ post.title }}</h1>
+        </a>
+        {% comment %} <h2 class="fs18px">{{ post.subtitle }}</h2> {% endcomment %}
+      </div>
+      <div class="text-muted py-1 small">
+         <span class="align-middle">
+        {{ post.created_at|date:"d.m.Y" }}&nbsp;&nbsp;</span>
+        <span class="align-middle"><a href="{% url 'TagListView' post.tag.slug %}"
+           class="text-decoration-none text-muted hvr-underline-reveal">{{ post.tag.name|title }}</a></span>
+      </div>
+      <div>
+        <p>
+          {{ post.teaser }} <span><a href="{{ post.get_absolute_url }}"
+                                     class="text-decoration-none link-dark my-link-color my-link-color-hover hvr-underline-reveal-green">Weiterlesen</a></span>
+        </p>
+      </div>
+    </div>
+  </div>
+{% endfor %}

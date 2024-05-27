@@ -1,0 +1,19 @@
+{% if sources %}
+  <div class="mt-4">
+    <div class="px-2 fw-bold font-monospace">QUELLEN</div>
+    <div class="py-1 px-2">
+      <div class="card mb-2 bg-light border-0">
+        {% for source in sources %}
+          {% if source.hyperlink %}
+            <a href="{{ source.hyperlink }}" target="_blank" rel="noopener noreferrer"
+               class="text-decoration-none my-link-color link-dark pb-2">
+          {% endif %}
+          {{ source.name }}
+          {% if source.hyperlink %}
+            </a>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+{% endif %}

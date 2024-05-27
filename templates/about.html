@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load static %}
+{% block meta %}
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@YOUR_TWITTER_NAME" />
+  <meta name="twitter:image" content="YOUR_URL{% static 'img/about.webp' %}" />
+  <meta property="og:title" content="YOUR TITLE">
+  <meta property="og:image" content="YOUR_URL{% static 'img/about.webp' %}">
+  <meta property="og:url" content="YOUR_URL">
+{% endblock meta %}
+{% block title %}
+  Über – YOUR NAME
+{% endblock title %}
+{% block main %}
+  <div class="container-lg mb-5">
+    {% include "components/navbar.html" %}
+    <div class="row gap-5 justify-content-center">
+      <main class="col-md-8 col-sm-12 col-xs-12 ">
+        <div class="container-fluid">
+          <div class="mt-5">
+            <img src="{% static 'img/about.webp' %}" id="about-image" class="shadow-sm" alt="about" />
+            <p><strong>Your name</strong>, born in... working in ...</p>
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+          </div>
+        </div>
+      </main>
+      <aside class="col-3 d-md-block d-none">
+        {% include "sidebar_list.html" %}
+      </aside>
+    </div>
+  </div>
+{% endblock main %}

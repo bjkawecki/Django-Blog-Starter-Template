@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load static %}
+{% block meta %}
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@YOUR_TWITTER" />
+    <meta name="twitter:image"
+          content="URL{% static 'img/about.webp' %}" />
+    <meta property="og:title" content="">
+    <meta property="og:description"
+          content="Mein Auftritt im Web. Erfahren Sie über meine Arbeit und wie Sie mich erreichen.">
+    <meta property="og:image"
+          content="URL{% static 'img/about.webp' %}">
+    <meta property="og:url" content="URL">
+{% endblock meta %}
+{% block title %}
+    Startseite – TITLE
+{% endblock title %}
+{% block main %}
+    <div class="container-lg mb-5">
+        {% include "components/navbar.html" %}
+        <div class="row gap-5 justify-content-center">
+            <main class="col-md-8 col-sm-12 col-xs-12 ">
+                <div class="container-fluid">
+                    <div class="row">
+                        {% if not latest_post %}<div class="mt-5">Keine Beiträge.</div>{% endif %}
+                        {% include "components/latest-post.html" %}
+                        {% include "components/post-list-image.html" %}
+                        <hr class="dropdown-divider" />
+                        {% include "components/post-list.html" %}
+                    </div>
+                </div>
+                {% if posts %}
+                    {% include "components/button-up.html" %}
+                {% endif %}
+            </main>
+            <aside class="col-3 d-md-block d-none">
+                {% include "sidebar_list.html" %}
+            </aside>
+        </div>
+    </div>
+{% endblock main %}

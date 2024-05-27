@@ -1,0 +1,29 @@
+<nav class="navbar navbar-expand-lg bg-light navbar-light sticky-top  d-md-none">
+  <div class="container-fluid">
+    <div class="pt-2">
+      <a href="{% url 'homepage' %}" class="text-dark text-decoration-none">
+        <div class="fs-6 d-flex ">
+          <strong>TITLE | Blog</strong>
+        </div>
+      </a>
+    </div>
+    <button class="navbar-toggler ms-auto"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseExample"
+            aria-controls="collapseExample"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse col-12" id="collapseExample">
+      {% if 'posts' in request.path %}
+        {% include "sidebar_nav_single.html" %}
+      {% elif 'impressum' in request.path %}
+        {% include "sidebar_impressum_mobile.html" %}
+      {% else %}
+        {% include "sidebar_nav_list.html" %}
+      {% endif %}
+    </div>
+  </div>
+</nav>

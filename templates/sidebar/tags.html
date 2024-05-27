@@ -1,0 +1,13 @@
+<div class="mt-4">
+  <div class="px-2 fw-bold font-monospace">THEMEN</div>
+  <ul class="list-inline my-1 px-2">
+    {% for tag in tags|dictsort:"name" %}
+      <li class="list-inline-item {% if tag.name in request.path %}fw-bold{% else %}{% endif %}">
+        <a href="{% url 'TagListView' tag.slug %}"
+           class="text-decoration-none {% if tag.name in request.path %}my-link-color-hover my-link-color {% else %}link-dark  hvr-underline-reveal{% endif %}">
+          {{ tag.name|title }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+  {{ tag.name }}
+</div>

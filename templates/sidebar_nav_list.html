@@ -1,0 +1,10 @@
+{% block sidebar %}
+    <div class="sticky-top bg-light ">
+        {% if tags %}
+            {% include "./sidebar/tags.html" %}
+        {% endif %}
+        {% include "./sidebar/vitrine.html" %}
+        {% include "./sidebar/services.html" %}
+        {% include "./sidebar/footer.html" %}
+    </div>
+{% endblock sidebar %}

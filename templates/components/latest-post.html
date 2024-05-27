@@ -1,0 +1,32 @@
+{% load static %}
+{% if latest_post %}
+  <div class="card border-0 my-5 bg-light">
+    {% if latest_post.image %}
+      <a href="{{ latest_post.get_absolute_url }}">
+        <img src="{{ latest_post.image.url }}"
+             class="card-img-top"
+             alt=""
+             height=""
+             width="" />
+      </a>
+    {% endif %}
+    <div class="card-body p-0">
+      <a href="{{ latest_post.get_absolute_url }}"
+         class="text-decoration-none my-link-color link-dark">
+        <h1 class="fs-1 fw-bold pt-3">{{ latest_post.title }}</h1>
+      </a>
+      <h2 class="fs-4">{{ latest_post.subtitle }}</h2>
+      <div class="text-muted mb-3">
+        <span class="align-middle">{{ latest_post.created_at|date:"d.m.Y" }}&nbsp;&nbsp;</span>
+        <span class="align-middle">
+          <a href="{% url 'TagListView' latest_post.tag.slug %}"
+             class="text-decoration-none text-muted hvr-underline-reveal">{{ latest_post.tag.slug|title }}</a>
+        </span>
+      </div>
+      <div class="fs18px">
+        {{ latest_post.teaser }} <span><a href="{{ latest_post.get_absolute_url }}"
+                                          class="text-decoration-none link-dark my-link-color my-link-color-hover hvr-underline-reveal-green fw-bold">Weiterlesen</a></span>
+      </div>
+    </div>
+  </div>
+{% endif %}
