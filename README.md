@@ -1,7 +1,7 @@
 # Simple Django weblog
 
-![Static Badge](https://img.shields.io/badge/DJANGO-4.2-%23092E20?style=flat&logo=django&labelColor=%23092E20&color=white)
-![Static Badge](https://img.shields.io/badge/BOOTSTRAP-5-%237952B3?style=flat&logo=bootstrap&logoColor=white&labelColor=%237952B3&color=white)
+![Static Badge](https://img.shields.io/badge/DJANGO 4.2-%23092E20?style=flat&logo=django&labelColor=%23092E20&color=white)
+![Static Badge](https://img.shields.io/badge/BOOTSTRAP 5-%237952B3?style=flat&logo=bootstrap&logoColor=white&labelColor=%237952B3&color=white)
 ![Static Badge](https://img.shields.io/badge/HTMX-%233366CC?style=flat&logo=htmx&logoColor=white&color=%233366CC)
 ![Static Badge](https://img.shields.io/badge/MARKDOWN-black?style=flat&logo=markdown&color=black)
 
