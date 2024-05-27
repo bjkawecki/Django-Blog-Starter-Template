@@ -3,7 +3,7 @@
 A simple blog powered by Python/Django with some features and templates to get you started quickly.
 
 ![Static Badge](https://img.shields.io/badge/DJANGO-4.2-%23092E20?style=flat-square&logo=django&labelColor=%23092E20&color=gray)
-![Static Badge](https://img.shields.io/badge/BOOTSTRAP-5-%237952B3?style=flat-square&logo=bootstrap&labelColor=%237952B3&color=gray)
+![Static Badge](https://img.shields.io/badge/BOOTSTRAP-5-%237952B3?style=flat-square&logo=bootstrap&logoColor=white&labelColor=%237952B3&color=gray)
 ![Static Badge](https://img.shields.io/badge/HTMX-%233366CC?style=flat-square&logo=htmx&labelColor=%233366CC)
 ![Static Badge](https://img.shields.io/badge/MARKDOWN-%23000000?style=flat-square&logo=markdown&labelColor=%23000000)
 
