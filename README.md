@@ -2,7 +2,11 @@
 
 A simple blog powered by Python/Django with some features and templates to get you started quickly.
 
-![Static Badge](https://img.shields.io/badge/DJANGO-%23092E20?style=flat&logo=django)
+![Static Badge](https://img.shields.io/badge/PYTHON-%#3776AB?style=flat&logo=python)
+![Static Badge](https://img.shields.io/badge/DJANGO-%#092E20?style=flat&logo=django)
+![Static Badge](https://img.shields.io/badge/BOOTSTRAP-%#7952B3?style=flat&logo=bootstrap)
+![Static Badge](https://img.shields.io/badge/HTMX-%#3366CC?style=flat&logo=htmx)
+![Static Badge](https://img.shields.io/badge/MARKDOWN-%#000000?style=flat&logo=markdown)
 
 
 ## Prerequisites
@@ -16,7 +20,7 @@ Make sure, that `python3` and `git` are installed on your machine.
 - Makes use of Twitter Bootstrap v5 and Bootstrap icons
 - Responsive
 - Format your blog posts easily with Markdown
-- Landing page with HMTX for infinite scrolling 
+- Landing page with HTMX for infinite scrolling 
 - Lightweight SQLite3 database
 - Settings for development and production environment
 - Each blog post has a image, tags, sources
